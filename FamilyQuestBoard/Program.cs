@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using FamilyQuestBoard.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<FamilyQuestBoardContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("FamilyQuestBoardContext") ?? throw new InvalidOperationException("Connection string 'FamilyQuestBoardContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
