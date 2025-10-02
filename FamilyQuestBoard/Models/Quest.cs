@@ -9,6 +9,8 @@ namespace FamilyQuestBoard.Models
         public string? Description { get; set; }
         [DataType(DataType.Date)]
         public DateTime CompletionDate { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime CreationDate { get; set; } = DateTime.UtcNow;
         public int Points { get; set; }
 
     }
