@@ -10,7 +10,7 @@ namespace FamilyQuestBoard.Models
         [DataType(DataType.Date)]
         public DateTime CompletionDate { get; set; }
         [DataType(DataType.Date)]
-        public DateTime CreationDate { get; set; } = DateTime.UtcNow;
+        public DateTimeOffset CreationDate { get; set; } = DateTimeOffset.UtcNow;
         public int Points { get; set; }
 
     }
